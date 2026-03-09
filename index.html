@@ -68,27 +68,39 @@
 
     <a href="manifesto.html" class="blink">[ GERÇEKLERLE YÜZLEŞMEK İÇİN BAYRAĞA TIKLA ]</a>
 
-    <script>
-        // İnternetin en büyük illüzyonu: Fake Canlı Sayaç
-        // 2024'ten bu yana geçen dakikaları hesaplayıp baz sayıya ekler ki sayı hep mantıklı bir şekilde yüksek olsun
-        let baseDate = new Date("2024-01-01").getTime();
-        let now = new Date().getTime();
-        let currentCount = 145300 + Math.floor((now - baseDate) / 30000); 
+ 
 
+    <script>
+        // İleri Seviye Psikolojik Harp Sayacı (Tarayıcı Hafızalı)
         let counterElement = document.getElementById('hit-counter');
         
-        // İlk sayıyı ekrana yazdır ve 6 haneli yap (boşluklu)
+        // Ziyaretçinin tarayıcısında (gizlice) sayı var mı diye bakıyoruz
+        let currentCount = localStorage.getItem('aydinlananKisi');
+        
+        // Eğer ilk kez giriyorsa 145342'den başlat, daha önce girdiyse kaldığı yerden devam et
+        if (!currentCount) {
+            currentCount = 145342; 
+        } else {
+            currentCount = parseInt(currentCount);
+        }
+
         function updateDisplay() {
+            // Sayıyı 6 haneli formatta tut ve aralara o hacker boşluklarını koy
             let numStr = currentCount.toString().padStart(6, '0');
             counterElement.innerText = numStr.split('').join(' ');
+            
+            // Sayıyı adamın tarayıcısına gizlice kaydet (F5 atarsa sıfırlanmasın)
+            localStorage.setItem('aydinlananKisi', currentCount);
         }
-        updateDisplay();
 
-        // Sayfada kaldıkça her 2-4 saniyede bir sayacı canlı canlı artır!
+        // Sayfa açılır açılmaz ilk sayıyı ekrana çak
+        updateDisplay(); 
+
+        // Her 3 saniyede bir sayacı tıkır tıkır artır!
         setInterval(function() {
-            currentCount += Math.floor(Math.random() * 3) + 1; // 1 ile 3 kişi arası ekle
+            currentCount += Math.floor(Math.random() * 3) + 1; // 1 ile 3 kişi arası rastgele ekle
             updateDisplay();
-        }, Math.random() * 2000 + 2000); 
+        }, 3000); 
     </script>
 
 </body>
