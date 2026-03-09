@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Sayfa - Beden Otonomisi</title>
+    <title>Ana Sayfa - Beden Otonomisi Hareketi</title>
     <style>
+        /* Sitenin Arka Planı (Nostaljik Siyah/Gri Çizgili Yapı) */
         body {
-            /* Retro tekrarlayan arkaplan efekti */
             background-color: #111;
             background-image: repeating-linear-gradient(45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%, #1a1a1a), repeating-linear-gradient(45deg, #1a1a1a 25%, #111 25%, #111 75%, #1a1a1a 75%, #1a1a1a);
             background-position: 0 0, 10px 10px;
@@ -15,13 +15,17 @@
             margin: 0;
             padding: 20px 0;
         }
+
+        /* Ana Çerçeve (960px Sabit Genişlik) */
         #wrapper {
             width: 960px;
             margin: 0 auto;
-            background-color: #ccc;
+            background-color: #ececec;
             border: 4px solid #800; /* Koyu kırmızı dış çerçeve */
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 20px rgba(0,0,0,0.9);
         }
+
+        /* Tepe Banner / Header */
         #header {
             background: linear-gradient(to bottom, #600, #200);
             height: 150px;
@@ -36,17 +40,19 @@
         #header h1 { margin: 0; font-size: 36px; letter-spacing: 2px; }
         #header p { margin: 5px 0 0 0; font-size: 14px; color: #ccc; }
 
+        /* İçeriklerin Bulunduğu Ana Alan (Yan Yana Dizilim) */
         #main-container {
             display: flex;
-            background-color: #ececec;
+            min-height: 600px; /* Sayfa boş olsa bile uzun dursun */
         }
 
-        /* SOL MENÜ (tr.gg Stili) */
+        /* Sol Menü Sütunu */
         #left-sidebar {
             width: 220px;
             background-color: #222;
             padding: 10px;
             border-right: 3px solid #800;
+            box-sizing: border-box;
         }
         .menu-baslik {
             background-color: #111;
@@ -57,6 +63,7 @@
             margin-bottom: 10px;
             font-weight: bold;
             text-align: center;
+            letter-spacing: 1px;
         }
         .menu-item {
             display: block;
@@ -74,26 +81,91 @@
             background: linear-gradient(to bottom, #f00, #a00);
         }
 
-        /* ORTA İÇERİK ALANI */
-        #content {
-            flex: 1; /* Bu ayar sayesinde sağ sütun kalkınca yazı alanı otomatik genişler */
-            padding: 20px;
+        /* Orta İçerik (Makale) Alanı */
+        #content-area {
+            flex: 1; /* Geri kalan tüm boşluğu kapla */
+            padding: 15px;
+            background-color: #ececec;
+            box-sizing: border-box;
+        }
+        
+        /* Makalenin oturduğu beyaz kutu */
+        .content-box {
             background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            min-height: 530px;
             font-size: 14px;
             line-height: 1.6;
             color: #333;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
         }
+
         .content-header {
             background: linear-gradient(to bottom, #eee, #ddd);
             padding: 10px;
             border: 1px solid #ccc;
             font-weight: bold;
             color: #800;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
+        /* Alt Bilgi (Footer) */
         #footer {
             background-color: #222;
             color: #888;
             text-align: center;
             padding: 15px;
+            font-size: 12px;
+            border-top: 4px solid #800;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <!-- TEPE BANNER -->
+    <div id="header">
+        <h1>BEDEN OTONOMİSİ HAREKETİ</h1>
+        <p>Benimpipim.org.tr Resmi Bilgi Portalı</p>
+    </div>
+
+    <!-- ANA GÖVDE -->
+    <div id="main-container">
+        
+        <!-- SOL MENÜ -->
+        <div id="left-sidebar">
+            <div class="menu-baslik">ANA MENÜ</div>
+            <a href="anasayfa.html" class="menu-item">Ana Sayfa</a>
+            <a href="manifesto.html" class="menu-item">Manifestoyu Oku</a>
+            <a href="#" class="menu-item">Tıbbi Gerçekler</a>
+            <a href="#" class="menu-item">Hukuki Boyut</a>
+            <a href="#" class="menu-item">Mitler ve Yalanlar</a>
+            <a href="#" class="menu-item">Bize Katılın</a>
+        </div>
+
+        <!-- ORTA İÇERİK KISMI -->
+        <div id="content-area">
+            <div class="content-box">
+                <div class="content-header">Ana Sayfa</div>
+                <p><strong>Sayın ziyaretçi, sitemize Hoş Geldin...</strong></p>
+                <p>Manifestomuzu okuyarak o ilk şoku atlattınız. Yüzyıllardır "sağlık", "gelenek" veya "hijyen" kılıfına sokularak sorgulanması yasaklanan bu devasa ritüelin perde arkasını konuşma vakti geldi.</p>
+                <p>Biz bir şaka değiliz; biz, beden dokunulmazlığının yaşa veya cinsiyete bakılmaksızın herkes için geçerli olduğunu savunan sivil bir inisiyatifiz. Soldaki menülerden tıbbi ve hukuki gerçeklere ulaşabilirsiniz.</p>
+
+                <br><br>
+                <center>
+                    <img src="pipimedokunma.png" alt="Direniş Logosu" style="max-width: 250px; border: 2px solid #ccc; padding: 5px;">
+                </center>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ALT BİLGİ -->
+    <div id="footer">
+        &copy; 2009 - 2026 Beden Otonomisi Hareketi | Tüm Hakları Saklıdır
+    </div>
+</div>
+
+</body>
+</html>
