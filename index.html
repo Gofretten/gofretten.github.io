@@ -68,10 +68,33 @@
 
     <a href="manifesto.html" class="blink">[ GERÇEKLERLE YÜZLEŞMEK İÇİN BAYRAĞA TIKLA ]</a>
 
-    <div class="counter">
+   <div class="counter">
         Şu ana kadar aydınlanan kişi sayısı:<br><br>
-        <span style="border: 2px solid #00ff00; padding: 5px 10px; letter-spacing: 5px;">0 0 1 4 5 3</span>
+        <span id="hit-counter" style="border: 2px solid #00ff00; padding: 5px 10px; letter-spacing: 5px;">145342</span>
     </div>
+
+    <script>
+        // İnternetin en büyük illüzyonu: Fake Canlı Sayaç
+        // 2024'ten bu yana geçen dakikaları hesaplayıp baz sayıya ekler ki sayı hep mantıklı bir şekilde yüksek olsun
+        let baseDate = new Date("2024-01-01").getTime();
+        let now = new Date().getTime();
+        let currentCount = 145300 + Math.floor((now - baseDate) / 30000); 
+
+        let counterElement = document.getElementById('hit-counter');
+        
+        // İlk sayıyı ekrana yazdır ve 6 haneli yap (boşluklu)
+        function updateDisplay() {
+            let numStr = currentCount.toString().padStart(6, '0');
+            counterElement.innerText = numStr.split('').join(' ');
+        }
+        updateDisplay();
+
+        // Sayfada kaldıkça her 2-4 saniyede bir sayacı canlı canlı artır!
+        setInterval(function() {
+            currentCount += Math.floor(Math.random() * 3) + 1; // 1 ile 3 kişi arası ekle
+            updateDisplay();
+        }, Math.random() * 2000 + 2000); 
+    </script>
 
 </body>
 </html>
