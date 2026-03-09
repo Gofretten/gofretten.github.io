@@ -55,6 +55,8 @@
             font-size: 12px;
             border: 1px solid #555;
             margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
         }
         .menu-item {
             display: block;
@@ -74,7 +76,7 @@
 
         /* ORTA İÇERİK ALANI */
         #content {
-            flex: 1;
+            flex: 1; /* Bu ayar sayesinde sağ sütun kalkınca yazı alanı otomatik genişler */
             padding: 20px;
             background-color: #fff;
             font-size: 14px;
@@ -89,135 +91,9 @@
             color: #800;
             margin-bottom: 15px;
         }
-        .yorum-kutusu {
-            margin-top: 40px;
-            border-top: 2px dashed #ccc;
-            padding-top: 20px;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ddd;
-        }
-        .yorum-kutusu input, .yorum-kutusu textarea {
-            width: 95%;
-            margin-bottom: 10px;
-            padding: 5px;
-            border: 1px solid #999;
-        }
-        .yorum-kutusu button {
-            background: linear-gradient(to bottom, #eee, #ccc);
-            border: 1px solid #666;
-            padding: 5px 15px;
-            cursor: pointer;
-        }
-
-        /* SAĞ WIDGET ALANI (Meşhur Saat Köşesi) */
-        #right-sidebar {
-            width: 160px;
-            background-color: #ddd;
-            padding: 10px;
-            border-left: 3px solid #800;
-            text-align: center;
-        }
-        .widget-baslik {
-            background: linear-gradient(to bottom, #555, #222);
-            color: white;
-            padding: 5px;
-            font-size: 12px;
-            border: 1px solid #000;
-            margin-bottom: 10px;
-        }
-        .fake-clock {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #fff, #aaa);
-            border: 5px solid #333;
-            margin: 0 auto 20px auto;
-            position: relative;
-            box-shadow: inset 0 0 10px #000;
-        }
-        /* CSS ile sahte yelkovan ve akrep */
-        .clock-hand { position: absolute; background: black; transform-origin: bottom center; }
-        .hour { width: 4px; height: 35px; top: 25px; left: 58px; transform: rotate(45deg); }
-        .minute { width: 3px; height: 45px; top: 15px; left: 58px; transform: rotate(120deg); }
-        .center-dot { position: absolute; width: 10px; height: 10px; background: red; border-radius: 50%; top: 55px; left: 55px; }
 
         #footer {
             background-color: #222;
             color: #888;
             text-align: center;
             padding: 15px;
-            font-size: 12px;
-            border-top: 4px solid #800;
-        }
-    </style>
-</head>
-<body>
-
-<div id="wrapper">
-    <!-- TEPE BANNER -->
-    <div id="header">
-        <h1>BEDEN OTONOMİSİ HAREKETİ</h1>
-        <p>Benimpipim.org.tr Resmi Bilgi Portalı</p>
-    </div>
-
-    <div id="main-container">
-        
-        <!-- SOL MENÜ (Kırmızı Bloklar) -->
-        <div id="left-sidebar">
-            <div class="menu-baslik">Menü</div>
-            <a href="anasayfa.html" class="menu-item">Ana Sayfa</a>
-            <a href="manifesto.html" class="menu-item">Manifestoyu Oku</a>
-            <a href="#" class="menu-item">Tıbbi Gerçekler</a>
-            <a href="#" class="menu-item">Hukuki Boyut</a>
-            <a href="#" class="menu-item">Mitler ve Yalanlar</a>
-            <a href="#" class="menu-item">Galeri / Videolar</a>
-            <a href="#" class="menu-item">Bize Katılın</a>
-            <a href="#" class="menu-item">Ziyaretçi Defteri</a>
-        </div>
-
-        <!-- ORTA İÇERİK -->
-        <div id="content">
-            <div class="content-header">Ana Sayfa</div>
-            <p><strong>Sayın ziyaretçi sitemize Hoş Geldin...</strong></p>
-            <p>Manifestomuzu okuyarak o ilk şoku atlattınız. Yüzyıllardır "sağlık", "gelenek" veya "hijyen" kılıfına sokularak sorgulanması yasaklanan bu devasa ritüelin perde arkasını konuşma vakti geldi.</p>
-            <p>Biz bir şaka değiliz; biz, beden dokunulmazlığının yaşa veya cinsiyete bakılmaksızın herkes için geçerli olduğunu savunan sivil bir inisiyatifiz. Soldaki menülerden tıbbi ve hukuki gerçeklere ulaşabilirsiniz.</p>
-
-            <br>
-            <center><img src="pipimedokunma.png" alt="Logo" style="max-width: 250px; border: 2px solid #ccc;"></center>
-            <br>
-
-            <!-- TR.GG Klasik Yorum Kutusu (Görsel amaçlı) -->
-            <div class="yorum-kutusu">
-                <b>Bu sayfa hakkında yorum ekle:</b><br><br>
-                Şu olarak yaz: <input type="text" placeholder="Adınız veya Rumuz"><br>
-                Mesajın:<br>
-                <textarea placeholder="Buraya yazın..."></textarea><br>
-                <button>Yorum ekle</button>
-            </div>
-        </div>
-
-        <!-- SAĞ WIDGET KÖŞESİ -->
-        <div id="right-sidebar">
-            <div class="widget-baslik">Saat</div>
-            <!-- Retro Flash Saat İmitasyonu -->
-            <div class="fake-clock">
-                <div class="clock-hand hour"></div>
-                <div class="clock-hand minute"></div>
-                <div class="center-dot"></div>
-            </div>
-
-            <div class="widget-baslik">Durum</div>
-            <p style="font-size: 12px; font-weight: bold; color: green;">Sistem Online!</p>
-        </div>
-
-    </div>
-
-    <!-- ALT BİLGİ -->
-    <div id="footer">
-        &copy; 2024 Beden Otonomisi Hareketi | Tasarım: benimpipim.org.tr
-    </div>
-</div>
-
-</body>
-</html>
